@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.25;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-image: linear-gradient(to bottom, #989898, #020917);
+}
+
+.chat-bubble {
+  @apply rounded-lg p-2 shadow-md;
+}
+
+.chat-start {
+  @apply flex justify-start;
+}
+
+.chat-start .chat-bubble {
+  @apply bg-gray-500 text-white;
+}
+
+.chat-start .chat-bubble::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid gray-100;
+  border-left: 8px solid transparent;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.chat-end {
+  @apply flex justify-end;
+}
+
+.chat-end .chat-bubble {
+  @apply bg-blue-500 text-white;
+}
+
+.chat-end .chat-bubble::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid blue-100;
+  border-right: 8px solid transparent;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
